@@ -1,0 +1,20 @@
+@startuml
+
+node Client {
+  component Browser
+}
+
+cloud Azure {
+  node Web_Server {
+  artifact Website
+  }
+
+  node SQL_Server {
+    artifact SQL_Database
+  }
+}
+
+Web_Server -- SQL_Server
+Client -- Web_Server
+
+@enduml

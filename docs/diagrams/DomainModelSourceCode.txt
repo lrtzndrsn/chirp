@@ -1,0 +1,102 @@
+classDiagram 
+    namespace ChirpCore{
+        class AuthorDTO {
+            -String name
+            -String email
+        } 
+        class CheepDTO {
+            -String message
+            -String author
+            -String timestamp
+        }
+        class IAuthorRepository {
+       
+        }
+
+        class ICheepRepository { 
+
+        }
+    }
+    class ICheepRepository
+    <<Interface>> ICheepRepository
+
+    class IAuthorRepository
+    <<Interface>> IAuthorRepository
+
+    class CheepDTO
+    <<Record>> CheepDTO
+
+    class AuthorDTO
+    <<Record>> AuthorDTO
+
+    ICheepRepository "" <|.. "" CheepRepository : Implements
+    IAuthorRepository "" <|.. "" AuthorRepository : Implements
+    CheepDTO "" <.. "" CheepRepository : Dependency
+    CheepDTO "" -- "" ICheepRepository : Association
+    AuthorDTO <.. AuthorRepository : Dependency
+    AuthorDTO -- IAuthorRepository : Association
+
+namespace ChirpInfrastructure {
+    class Author {
+        +List~Cheep~ Cheeps
+        +List~Author~ Followers 
+        +List~Author~ Following  
+    }
+    class Cheep {
+        +String CheepId
+        +Author Author
+        +String Text
+        +DateTime TimeStamp
+    }
+    class AuthorRepository {
+        -ChirpContext _db
+    }
+    class CheepRepository {
+        -ChirpContext _db
+        -CheepCreateValidator _validator
+    }
+    class CheepCreateValidator {
+        
+    }
+    class ChirpContext {
+        +DbSet~Cheep~ Cheeps
+        +DbSet~Author~ Authors
+    }
+}
+
+CheepCreateValidator "1..1" <-- "1..1" CheepRepository : Association
+ChirpContext "1..1" <-- "1..1" AuthorRepository : Association
+ChirpContext "1..1" <-- "1..1" CheepRepository : Association
+ChirpContext "1..1" *-- "0..*" Author : Composition
+ChirpContext "1..1" *-- "0..*" Cheep : Composition
+Author "0..*" -- "1..1" AuthorRepository : Association
+Cheep "0..*" -- "1..1" CheepRepository : Association
+Cheep "0..*" --* "1..1" Author : Composition
+
+namespace ChirpWeb {
+    class Program {
+        +WebApplicationBuilder builder
+        +WebApplication app
+    }
+}
+
+namespace ASPNETCoreIdentity {
+    class IdentityUser {
+        +String email
+        +TKey Id
+        +String UserName 
+    }
+}
+
+IdentityUser <|-- Author : Inheritance 
+
+namespace FluentValidation {
+        class AbstractValidator{
+        "Jonas må gerne lige tjekke den her"
+    }
+}
+
+class AbstractValidator
+<<Abstract>> AbstractValidator
+
+AbstractValidator <|-- CheepCreateValidator : Inheritance

@@ -1,0 +1,9 @@
+@startuml
+start
+:On Push to main;
+:Run Dotnet build;
+:Run Dotnet publish;
+:Upload to Azure production slot;
+
+end
+@enduml

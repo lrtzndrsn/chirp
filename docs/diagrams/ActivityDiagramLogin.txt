@@ -1,0 +1,18 @@
+@startuml
+start
+:Display Public Timeline;
+:Click on Login;
+if (Has GitHub?) then (yes)
+    :Click GitHub;
+    :Authenticate;
+else (no)
+    :Enter Information;
+    :Click Login;
+endif
+if (User is following anyone?) then (yes) 
+    :Redirect to Private Timeline;
+    else (no)
+    :Redirect to Public Timeline;
+    endif
+end
+@enduml

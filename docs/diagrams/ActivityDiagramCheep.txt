@@ -1,0 +1,12 @@
+@startuml
+start
+:Click Private Timeline;
+    :Type Cheep;
+    note left
+        Cheep must be 
+        <= 160 characters
+    end note
+    :Click Share;
+    :Display Private Timeline;
+end
+@enduml

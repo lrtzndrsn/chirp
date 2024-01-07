@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1E658C75-DA7B-487B-B70E-EBAD19B0E4E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chirp.Core", "src\Chirp.Core\Chirp.Core.csproj", "{70264599-F60E-4A8C-9424-C6EB79178610}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chirp.Infrastructure", "src\Chirp.Infrastructure\Chirp.Infrastructure.csproj", "{31C55FB7-8909-4A49-A69C-6EA3C5562BE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chirp.Web", "src\Chirp.Web\Chirp.Web.csproj", "{EC857FE5-F31C-4EBA-BE68-5A1BE9F7CB8A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{40FBFE33-E348-4FF1-8F80-1F1D8BBDEC6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chirp.Web.Tests", "test\Chirp.Web.Tests\Chirp.Web.Tests.csproj", "{8CCDB2B5-D650-416D-9129-7A26F03882C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chirp.Infrastructure.Tests", "test\Chirp.Infrastructure.Tests\Chirp.Infrastructure.Tests.csproj", "{FF6BC38C-024D-4F61-B217-E719FD245C3B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70264599-F60E-4A8C-9424-C6EB79178610}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70264599-F60E-4A8C-9424-C6EB79178610}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70264599-F60E-4A8C-9424-C6EB79178610}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70264599-F60E-4A8C-9424-C6EB79178610}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31C55FB7-8909-4A49-A69C-6EA3C5562BE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31C55FB7-8909-4A49-A69C-6EA3C5562BE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31C55FB7-8909-4A49-A69C-6EA3C5562BE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31C55FB7-8909-4A49-A69C-6EA3C5562BE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC857FE5-F31C-4EBA-BE68-5A1BE9F7CB8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC857FE5-F31C-4EBA-BE68-5A1BE9F7CB8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC857FE5-F31C-4EBA-BE68-5A1BE9F7CB8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC857FE5-F31C-4EBA-BE68-5A1BE9F7CB8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CCDB2B5-D650-416D-9129-7A26F03882C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CCDB2B5-D650-416D-9129-7A26F03882C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CCDB2B5-D650-416D-9129-7A26F03882C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CCDB2B5-D650-416D-9129-7A26F03882C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF6BC38C-024D-4F61-B217-E719FD245C3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF6BC38C-024D-4F61-B217-E719FD245C3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF6BC38C-024D-4F61-B217-E719FD245C3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF6BC38C-024D-4F61-B217-E719FD245C3B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{70264599-F60E-4A8C-9424-C6EB79178610} = {1E658C75-DA7B-487B-B70E-EBAD19B0E4E9}
+		{31C55FB7-8909-4A49-A69C-6EA3C5562BE1} = {1E658C75-DA7B-487B-B70E-EBAD19B0E4E9}
+		{EC857FE5-F31C-4EBA-BE68-5A1BE9F7CB8A} = {1E658C75-DA7B-487B-B70E-EBAD19B0E4E9}
+		{8CCDB2B5-D650-416D-9129-7A26F03882C3} = {40FBFE33-E348-4FF1-8F80-1F1D8BBDEC6C}
+		{FF6BC38C-024D-4F61-B217-E719FD245C3B} = {40FBFE33-E348-4FF1-8F80-1F1D8BBDEC6C}
+	EndGlobalSection
+EndGlobal

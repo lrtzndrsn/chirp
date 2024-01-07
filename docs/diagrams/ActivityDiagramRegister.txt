@@ -1,0 +1,14 @@
+@startuml
+start
+:Display Public Timeline;
+:Click on Register;
+if (Has GitHub?) then (yes)
+    :Click GitHub;
+    :Authenticate;
+else (no)
+    :Enter Information;
+    :Click Register;
+endif
+:Redirect to public timeline;
+stop
+@enduml

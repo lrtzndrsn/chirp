@@ -1,0 +1,7 @@
+@startuml
+start
+:Display Public Timeline;
+:Click on Author of a cheep;
+:See Author's Private Timeline;
+end
+@enduml

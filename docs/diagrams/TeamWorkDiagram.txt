@@ -1,0 +1,23 @@
+@startuml
+start
+:Task description is handed out;
+:Task is transformed into an Issue;
+:Issue in backlog;
+:Issue is moved to Ready;
+note: The time is right for this issue
+:Issue is moved to In Progress;
+:The Solution is implemented;
+if (New code) then (yes) 
+    :Issue is moved to Create tests;
+    note: Tests are created
+else (no)
+endif
+:Issue is moved to In review;
+note: A pull request on main is opened
+:Issue is closed and moved to Done;
+note 
+All tests passes and code is approved 
+by atleast two other people
+end note
+end
+@enduml

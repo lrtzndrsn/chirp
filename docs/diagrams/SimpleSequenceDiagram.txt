@@ -1,0 +1,35 @@
+sequenceDiagram 
+    actor User
+    participant CW as Chirp.Web
+
+    participant DB as ChirpDb
+
+    alt UnAuthenticated
+    User->>CW: GET (all cheeps - Public timeline)
+    activate CW
+    CW->>DB: GET (all cheeps - PublicTimeline)
+    activate DB
+    DB-->>CW: Resource (PublicTimeline)
+    deactivate DB
+    CW-->>User: Resource (PublicTimeline)
+    deactivate CW
+
+    else Authenticated
+    User->>CW: GET (cheeps - UserTimeline, PrivateTimeline)
+    activate CW
+    CW->>DB: GET (cheeps - UserTimeline, PrivateTimeline)
+    activate DB
+    DB-->>CW: Protected Resource
+    deactivate DB
+    CW-->>User: Success
+    deactivate CW
+
+    User->>CW: POST (cheep)
+    activate CW
+    CW-->>DB: POST (cheep)
+    activate DB
+    DB-->>CW: Success
+    deactivate DB
+    CW-->>User: Success
+    deactivate CW
+    end

@@ -1,0 +1,22 @@
+name: Close Issues on "Done" Column
+on:
+  project_card:
+    types:
+      - moved
+jobs:
+  close-issues:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install GitHub CLI
+        run: |
+          brew install gh
+        if: runner.os == 'Mac OS X'
+
+      - name: Check if card is in "Done" column
+        if: github.event.project_card.column_name == 'Done'
+        run: |
+          issue_number=$(echo "${{ github.event.project_card.content_url }}" | awk -F'/' '{print $NF}')
+          echo "Closing issue $issue_number"
+          gh issue close $issue_number
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

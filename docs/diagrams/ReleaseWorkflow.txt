@@ -1,0 +1,73 @@
+@startuml
+start
+:On Push tags;
+note right: Only tags named v*
+:Run Dotnet restore;
+:Run Dotnet build;
+:Run Dotnet test;
+split
+    note right: linux-x64
+    :Dotnet publish;
+    :Zip release;
+    :Remove output folder;
+    :Publish to release;
+split again
+    note right: win-x64
+    :Dotnet publish;
+    :Zip release;
+    :Remove output folder;
+    :Publish to release;
+split again
+    note right: osx-x64
+    :Dotnet publish;
+    :Zip release;
+    :Remove output folder;
+    :Publish to release;
+split again
+    note right: osx-arm64
+    :Dotnet publish;
+    :Zip release;
+    :Remove output folder;
+    :Publish to release;
+end split
+end
+@enduml
+
+  release:
+    needs: build_and_test
+    name: Release
+    strategy:
+      matrix:
+        target: [linux-x64, win-x64, osx-x64, osx-arm64]
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 7.0.400
+      - name: Build
+        shell: bash
+        run: |
+          # Variables
+          tag=$(git describe --tags --abbrev=0)
+          release_name="Chirp-$tag-${{ matrix.target }}"
+
+          # Build
+          dotnet publish src/Chirp.Web/Chirp.Web.csproj -r ${{ matrix.target }} -c Release -o "$release_name"
+
+          # Zip files
+          zip -r "${release_name}.zip" "$release_name"
+
+
+          # Delete output directory
+          rm -r "$release_name"
+      - name: Publish
+        uses: softprops/action-gh-release@v1
+        with:
+          files: "Chirp*"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

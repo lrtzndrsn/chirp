@@ -1,0 +1,49 @@
+@using Microsoft.AspNetCore.Identity
+@using Chirp.Infrastructure
+
+@inject SignInManager<Author> SignInManager
+@inject UserManager<Author> UserManager
+
+<ul class="navbar-nav">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <div class="form-group" style="display: horizontal;">
+            <button class="form-group">
+                <a id="public" class="nav-link text-dark" href="/" title="Manage">
+                    Home
+                </a>
+            </button>
+            <button class="form-group">
+                <a id="private" class="nav-link text-dark" href="/private" title="Manage">@UserManager.GetUserName(User)'s
+                    Timeline
+                </a>
+            </button>
+            <button class="form-group">
+                <a id="yourCheeps" class="nav-link text-dark" href="/@UserManager.GetUserName(User)">
+                    Your Cheeps
+                </a>
+            </button>
+            <button class="form-group">
+                <a id="UserInformation" class="nav-link text-dark" href="/UserInformation">
+                    About me
+                </a>
+            </button>
+            <button class="form-group">
+                <a id="logout" class="nav-link text-dark" href="/Identity/Account/Logout">
+                    Logout
+                </a>
+            </button>
+        </div>
+    }
+    else
+    {
+        <div class="nav-item">
+            <button>
+                <a class="nav-link text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">Register</a>
+            </button>
+            <button>
+                <a class="nav-link text-dark" id="login" asp-area="Identity" asp-page="/Account/Login">Login</a>
+            </button>
+        </div>
+    }
+</ul>
