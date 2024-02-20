@@ -33,11 +33,11 @@ When someone first visits the application, they are unauthorized and will theref
 
 ## Team members
 - Me 
-- [Anton](anlf@itu.dk)
-- [Clara](clwj@itu.dk)
-- [Oline](okre@itu.dk)
-- [Johan](jsbe@itu.dk)
-- [Jonas](kram@itu.dk)
+- Anton Friis (anlf@itu.dk)
+- Clara Walter (clwj@itu.dk)
+- Oline (okre@itu.dk)
+- Johan Sandager (jsbe@itu.dk)
+- Jonas Kramer (kram@itu.dk)
 
 ## Credits
 A vast amount of sources were used in the creation of this project, and appreciation goes out to all of those. A special thanks should be given to [Andrew Lock](https://github.com/andrewlock), the author of [ASP.NET Core in Action, Third Edition](https://www.manning.com/books/asp-net-core-in-action-third-edition). This book proved an invaluable resource in understanding the intricacies of ASP.NET Core and many of the technologies used in this project.
