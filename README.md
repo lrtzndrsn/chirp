@@ -25,7 +25,7 @@ This project constitutes the work I did together with my Group at the IT Univers
 * Trunk-based development (short-lived branches, quick merges to main)
 * Organizing our project in an intelligeble and structured manner
 
-### Read more about this in docs/report.md
+* __Read more about this in docs/report.md__
 
 ## About Chirp!
 <img width="705" alt="Screenshot 2024-02-21 at 22 26 28" src="https://github.com/lrtzndrsn/chirp/assets/123448847/52c41b1f-8970-4a4f-a4ca-fde3655ac479">
