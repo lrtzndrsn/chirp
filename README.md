@@ -26,6 +26,8 @@ This project constitutes the work I did together with my Group at the IT Univers
 * Organizing our project in an intelligeble and structured manner
 
 ## About Chirp!
+<img width="705" alt="Screenshot 2024-02-21 at 22 26 28" src="https://github.com/lrtzndrsn/chirp/assets/123448847/52c41b1f-8970-4a4f-a4ca-fde3655ac479">
+
 The Chirp! application is an X-like (formerly known as Twitter) application that encompasses much of the same functionality. As such, it is possible for a user of the application to - among other things - send cheeps (this applications version of tweets) to other users, like other users cheeps, and to view their individual timelines. To create the application, the group went through many iterative and incremental steps, starting from creating a command line application with a CSV-file as database, to then using SQLite and ASP.NET Core, and finally Azure and SQLServer for the final live application that was handed in for the exam.
 
 ## User manual
