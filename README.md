@@ -16,13 +16,14 @@ This project constitutes the work I did together with my Group at the IT Univers
 ## What we learned and worked with during this project:
 * CI/CD Pipelines, using Github Actions to automate workflows and SQLServer Azure for data persistence.
 * Working iteratively and in increments (Going from CLI app to minimal web API, to a live ASP.NET Core app using Razor pages, EF Core, etc.)
+* Working with a live database 
 * Working with issues and user stories
 * Working with onion architecture
 * Working with design principles
 * Implementing various design patterns
 * Dependency Injection
-* Trunk-based development (short-lived branches, quick merge to main)
-* Organizing our projects in an intelligeble and structured manner
+* Trunk-based development (short-lived branches, quick merges to main)
+* Organizing our project in an intelligeble and structured manner
 
 ## About Chirp!
 The Chirp! application is an X-like (formerly known as Twitter) application that encompasses much of the same functionality. As such, it is possible for a user of the application to - among other things - send cheeps (this applications version of tweets) to other users, like other users cheeps, and to view their individual timelines. To create the application, the group went through many iterative and incremental steps, starting from creating a command line application with a CSV-file as database, to then using SQLite and ASP.NET Core, and finally Azure and SQLServer for the final live application that was handed in for the exam.
